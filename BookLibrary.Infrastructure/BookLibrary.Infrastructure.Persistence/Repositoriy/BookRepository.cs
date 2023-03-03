@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookLibrary.Core.Domain.Entity
+namespace BookLibrary.Infrastructure.Persistence.Repositoriy
 {
-    public class Baseentity
+    public class BookRepository
     {
-        public Guid? Id { get; set; }
     }
 }
