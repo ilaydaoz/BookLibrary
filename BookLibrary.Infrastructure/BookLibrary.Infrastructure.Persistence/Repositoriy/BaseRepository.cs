@@ -24,9 +24,9 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
         public async Task<bool> Add(TEntity entity)
         {
             EntityEntry<TEntity> entityEntry = await DbSet.AddAsync(entity);
-            return entityEntry.State == EntityState.Added;   
+            return entityEntry.State == EntityState.Added;
         }
-       
+
         public bool Delete(TEntity entity)
         {
             EntityEntry<TEntity> entityEntry = DbSet.Remove(entity);
@@ -39,21 +39,27 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
             throw new NotImplementedException();
         }
 
-        public Task<TEntity> UpdateAsync(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Task<List<TEntity>> GetAll()
-        {  
+        {
             return _context.Set<TEntity>().ToListAsync();
-           //IEnumerable<TEntity> query = _context.Set<TEntity>();
-           //TEntity.Category = connection.QuerySingle<BookCategory>();
+            //IEnumerable<TEntity> query = _context.Set<TEntity>();
+            //TEntity.Category = connection.QuerySingle<BookCategory>();
         }
 
-        public Task<TEntity> GetById(Guid id)
+        public async Task<TEntity> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().Find(id);
+        }
+
+        public async Task<TEntity> Update(TEntity entity)
+        {
+            DbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return entity;
+
         }
     }
 }

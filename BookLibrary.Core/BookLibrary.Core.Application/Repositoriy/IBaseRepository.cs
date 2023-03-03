@@ -10,7 +10,7 @@ namespace BookLibrary.Core.Application.Repositoriy
     public interface IBaseRepository<T> where T : Baseentity
     {
         Task<bool> Add(T entity);
-        Task<T> UpdateAsync(T entity);
+        Task<T> Update(T entity);
         bool Delete(T entity);
         Task<T> GetById(Guid id);
         Task<int> SaveAsync();
