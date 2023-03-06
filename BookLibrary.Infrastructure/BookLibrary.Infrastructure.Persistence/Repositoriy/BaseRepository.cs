@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Infrastructure.Persistence.Repositoriy
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : Baseentity
+    public class BaseRepository<TEntity,IContext> : IBaseRepository<TEntity> where TEntity : Baseentity
     {
         private readonly BLDbContext _context;
         protected readonly DbSet<TEntity> DbSet;
@@ -59,7 +59,6 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return entity;
-
         }
     }
 }

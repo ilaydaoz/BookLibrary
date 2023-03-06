@@ -8,9 +8,9 @@ namespace BookLibrary.Core.Domain.Entity
 {
     public class Order : Baseentity
     {
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
         public string Name { get; set; } = string.Empty;
-        public Guid BookId { get; set; }
+        public Guid? BookId { get; set; }
         public string BookName { get; set; } = string.Empty;
         public DateTime OrderDate { get; set; }
         public int Returned { get; set; }
