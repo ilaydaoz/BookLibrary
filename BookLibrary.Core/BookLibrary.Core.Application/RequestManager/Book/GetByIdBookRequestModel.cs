@@ -1,4 +1,4 @@
-﻿using BookLibrary.Core.Application.Queries.Response;
+﻿using BookLibrary.Core.Application.Cqrs.Queries.Response.Book;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.RequestManager.Book
 {
-    public class GetByIdBookRequestModel : IRequest<BookGetbyIdResponse>
+    public class GetByIdBookRequestModel : IRequest<GetbyIdBookResponse>
     {
         public Guid Id { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using BookLibrary.Core.Application.RequestManager.Book.Commands;
 using BookLibrary.Core.Domain.Entity;
-using BookLibrary.Core.RequestManager.Commands.Book;
 using System;
 using System.Collections.Generic;
 using System.Linq;

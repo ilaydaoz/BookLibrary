@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Handlers\" />
-    <Folder Include="Commands\Response\" />
+    <Folder Include="Cqrs\Commands\Handlers\Book\" />
+    <Folder Include="Cqrs\Commands\Response\Book\" />
   </ItemGroup>
 
   <ItemGroup>

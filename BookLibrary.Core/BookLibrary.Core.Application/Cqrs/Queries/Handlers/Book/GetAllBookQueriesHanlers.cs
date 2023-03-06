@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookLibrary.Core.Application.Queries.Response
+namespace BookLibrary.Core.Application.Cqrs.Queries.Handlers.Book
 {
-    public class BookGetbyIdResponse
+    public class GetAllBookQueriesHanlers
     {
-        public Guid Id { get; set; }
     }
 }
