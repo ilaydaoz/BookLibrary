@@ -19,5 +19,10 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
         {
             throw new NotImplementedException();
         }
+
+        public Task<Book> InsertAsync(Book book)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

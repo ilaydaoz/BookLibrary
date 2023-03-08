@@ -10,5 +10,7 @@ namespace BookLibrary.Core.Application.Repositoriy
     public interface IBookRepository : IBaseRepository<Book>
     {
         public bool DeleteBook(Guid id);
+        Task<Book> InsertAsync(Book book);
+
     }
 }
