@@ -13,7 +13,7 @@ namespace BookLibrary.Core.Application.Repositoriy
         Task<T> Update(T entity);
         bool Delete(T entity);
         Task<T> GetById(Guid id);
-        Task<int> SaveAsync();
+        Task<int> SaveChangesAsync();
         Task<List<T>> GetAll();
     }
 }

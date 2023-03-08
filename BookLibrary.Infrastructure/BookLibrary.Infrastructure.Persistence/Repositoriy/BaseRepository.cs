@@ -34,7 +34,7 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
         }
 
 
-        public Task<int> SaveAsync()
+        public Task<int> SaveChangesAsync()
         {
             throw new NotImplementedException();
         }

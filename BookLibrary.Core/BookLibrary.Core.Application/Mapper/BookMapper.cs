@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BookLibrary.Core.Application.Cqrs.Queries.Response.Book;
 using BookLibrary.Core.Application.RequestManager.Book.Commands;
 using BookLibrary.Core.Domain.Entity;
 using System;
@@ -13,7 +14,8 @@ namespace BookLibrary.Core.Application.Mapper
     {
         public BookMapper ()
         {
-          CreateMap<InsertBookRequestModel, Book>();
+          CreateMap<UpdateBookRequestModel, Book>();      
+          CreateMap<Book, GetAllBookResponse>();        
         }
     }
 }
