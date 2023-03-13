@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Domain.Entity
 {
-    public class Order : Baseentity
+    public class Order : BaseEntity
     {
         public Guid? UserId { get; set; }
         public string Name { get; set; } = string.Empty;

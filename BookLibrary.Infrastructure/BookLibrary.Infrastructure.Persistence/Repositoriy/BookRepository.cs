@@ -14,15 +14,5 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
         public BookRepository(BLDbContext context) : base(context)
         {
         }
-
-        public bool DeleteBook(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Book> InsertAsync(Book book)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

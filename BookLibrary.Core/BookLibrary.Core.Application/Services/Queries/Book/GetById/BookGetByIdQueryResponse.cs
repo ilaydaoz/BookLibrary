@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookLibrary.Core.Application.Cqrs.Queries.Response.Book
+namespace BookLibrary.Core.Application.Services.Queries.Book.GetById
 {
-    public class GetAllBookResponse
+    public class BookGetByIdQueryResponse
     {
         public Guid Id { get; set; }
-        public Guid? CategoryId { get; set; }
     }
 }

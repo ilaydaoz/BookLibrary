@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Infrastructure.Persistence.Repositoriy
 {
-    public class BaseRepository<TEntity,IContext> : IBaseRepository<TEntity> where TEntity : Baseentity
+    public class BaseRepository<TEntity,IContext> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly BLDbContext _context;
         protected readonly DbSet<TEntity> DbSet;

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookLibrary.Core.Application.Cqrs.Queries.Response.Book
+namespace BookLibrary.Core.Application.Services.Commands.Book.Delete
 {
-    public class GetbyIdBookResponse
+    public class BookDeleteCommandResponse
     {
         public Guid Id { get; set; }
     }

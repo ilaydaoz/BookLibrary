@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.Repositoriy
 {
-    public interface IBaseRepository<T> where T : Baseentity
+    public interface IBaseRepository<T> where T : BaseEntity
     {
         Task<bool> Add(T entity);
         Task<T> Update(T entity);

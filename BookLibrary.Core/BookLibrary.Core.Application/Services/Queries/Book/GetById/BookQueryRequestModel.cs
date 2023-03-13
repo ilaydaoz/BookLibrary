@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookLibrary.Core.Application.RequestManager.Book.Commands
+namespace BookLibrary.Core.Application.Services.Queries.Book.GetById
 {
-    public class DeleteBookRequestModel : IRequest<bool>
+    public class BookQueryRequestModel : IRequest<BookGetByIdQueryResponse>
     {
         public Guid Id { get; set; }
     }

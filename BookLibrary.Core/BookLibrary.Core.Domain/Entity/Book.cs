@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Domain.Entity
 {
-    public class Book :Baseentity
+    public class Book : BaseEntity
     {
         public string Title { get; set; } = string.Empty;
         public string Author { get; set; } = string.Empty;

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookLibrary.Core.Domain.Entity
+namespace BookLibrary.Core.Application.Services.Queries.Book.GetById
 {
-    public class BaseEntity
+    public class BookGetByIdQueryMapper
     {
-        public Guid? Id { get; set; }
     }
 }
