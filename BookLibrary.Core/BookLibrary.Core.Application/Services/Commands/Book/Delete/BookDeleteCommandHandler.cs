@@ -24,7 +24,7 @@ namespace BookLibrary.Core.Application.Services.Commands.Book.Delete
         {
             var isDeleted = _bookRepository.Delete(new Domain.Entity.Book { Id = request.Id });
             await _bookRepository.SaveAsync();
-            return true;
+            return isDeleted;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.Services.Queries.Book.GetAll
 {
-    public class BookQueryRequestModel : IRequest<List<BookGetAllQueryResponse>>
+    public class BookGetAllQueryRequestModel : IRequest<List<BookGetAllQueryResponse>>
     {
     }
 }

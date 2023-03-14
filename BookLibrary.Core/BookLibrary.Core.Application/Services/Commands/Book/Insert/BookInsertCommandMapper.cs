@@ -11,8 +11,8 @@ namespace BookLibrary.Core.Application.Services.Commands.Book.Insert
     {
         public BookInsertCommandMapper ()
         {
-           CreateMap<Domain.Entity.Book, BookInsertCommandRequestModel>().ReverseMap();   
-           CreateMap<Domain.Entity.Book, BookInsertCommandResponse>().ReverseMap();   
+           CreateMap<BookInsertCommandRequestModel, Domain.Entity.Book>();   
+           CreateMap<Domain.Entity.Book, BookInsertCommandResponse>();   
         }
     }
 }

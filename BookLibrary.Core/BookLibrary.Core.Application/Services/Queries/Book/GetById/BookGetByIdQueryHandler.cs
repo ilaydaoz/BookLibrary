@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.Services.Queries.Book.GetById
 {
-    public class BookGetByIdQueryHandler : IRequestHandler<BookQueryRequestModel, BookGetByIdQueryResponse>
+    public class BookGetByIdQueryHandler : IRequestHandler<BookGetByIdQueryRequestModel, BookGetByIdQueryResponse>
     {
         private readonly IBookRepository _bookRepository;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace BookLibrary.Core.Application.Services.Queries.Book.GetById
             _mapper = mapper;
         }
 
-        public async Task<BookGetByIdQueryResponse> Handle(BookQueryRequestModel request, CancellationToken cancellationToken)
+        public async Task<BookGetByIdQueryResponse> Handle(BookGetByIdQueryRequestModel request, CancellationToken cancellationToken)
         {
             var book = await _bookRepository.GetById(request.Id);
             var mapbook = _mapper.Map<BookGetByIdQueryResponse>(book);
