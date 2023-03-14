@@ -9,11 +9,11 @@ namespace BookLibrary.Core.Application.Repositoriy
 {
     public interface IBaseRepository<T> where T : BaseEntity
     {
-        Task<bool> Add(T entity);
+        T Add(T entity);
         Task<T> Update(T entity);
         bool Delete(T entity);
         Task<T> GetById(Guid id);
-        Task<int> SaveChangesAsync();
+        Task<int> SaveAsync();
         Task<List<T>> GetAll();
     }
 }

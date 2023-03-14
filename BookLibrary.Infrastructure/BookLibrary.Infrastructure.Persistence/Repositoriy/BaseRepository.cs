@@ -3,11 +3,6 @@ using BookLibrary.Core.Domain.Entity;
 using BookLibrary.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookLibrary.Infrastructure.Persistence.Repositoriy
 {
@@ -21,10 +16,10 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
             _context = context;
             DbSet = _context.Set<TEntity>();
         }
-        public async Task<bool> Add(TEntity entity)
+        public TEntity Add(TEntity entity)
         {
-            EntityEntry<TEntity> entityEntry = await DbSet.AddAsync(entity);
-            return entityEntry.State == EntityState.Added;
+            EntityEntry<TEntity> entityEntry =  DbSet.Add(entity);
+            return entity;
         }
 
         public bool Delete(TEntity entity)
@@ -33,13 +28,10 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
             return entityEntry.State == EntityState.Deleted;
         }
 
-
-        public Task<int> SaveChangesAsync()
+        public async Task<int> SaveAsync()
         {
-            throw new NotImplementedException();
+            return await _context.SaveChangesAsync();
         }
-
-
 
         public Task<List<TEntity>> GetAll()
         {

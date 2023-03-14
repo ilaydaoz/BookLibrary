@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.Services.Commands.Book.Insert
 {
-    public class BookInsertCommandResponse : BaseEntity
+    public class BookInsertCommandResponse 
     {
-        public string Title { get; set; } = string.Empty;
-        public string Author { get; set; } = string.Empty;
-        public float Price { get; set; } = 0;
-        public bool Ordered { get; set; } = false;
+        public string Title { get; set; } 
+        public string Author { get; set; } 
+        public float Price { get; set; }
+        public bool Ordered { get; set; } 
         public Guid? CategoryId { get; set; }
     }
 }

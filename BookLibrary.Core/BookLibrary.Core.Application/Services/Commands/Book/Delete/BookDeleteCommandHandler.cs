@@ -9,22 +9,22 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.Services.Commands.Book.Delete
 {
-    public class BookDeleteCommandHandler : IRequestHandler<BookCommandRequestModel, bool>
+    public class BookDeleteCommandHandler : IRequestHandler<BookDeleteCommandRequestModel, bool>
     {
         private readonly IBookRepository _bookRepository;
-        private readonly IMapper _mapper;
+        
 
-        public BookDeleteCommandHandler(IBookRepository bookRepository, IMapper mapper)
+        public BookDeleteCommandHandler(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
-            _mapper = mapper;
+          
         }
 
-        public Task<bool> Handle(BookCommandRequestModel request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(BookDeleteCommandRequestModel request, CancellationToken cancellationToken)
         {
-            var bookToDelete = _mapper.Map<Domain.Entity.Book>(request);
-            var isDeleted = _bookRepository.Delete(bookToDelete);
-            return Task.FromResult(isDeleted);
+            var isDeleted = _bookRepository.Delete(new Domain.Entity.Book { Id = request.Id });
+            await _bookRepository.SaveAsync();
+            return true;
         }
     }
 }

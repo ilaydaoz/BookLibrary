@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookLibrary.Core.Application.Services.Commands.Book.Insert
 {
-    public class BookInsertCommandHandler : IRequestHandler<BookCommandRequestModel, BookInsertCommandResponse>
+    public class BookInsertCommandHandler : IRequestHandler<BookInsertCommandRequestModel, BookInsertCommandResponse>
     {
         private readonly IBookRepository _bookRepository;
         private readonly IMapper _mapper;
@@ -20,12 +20,14 @@ namespace BookLibrary.Core.Application.Services.Commands.Book.Insert
             _mapper = mapper;
         }
 
-        public async Task<BookInsertCommandResponse> Handle(BookCommandRequestModel request, CancellationToken cancellationToken)
+        public async  Task<BookInsertCommandResponse> Handle(BookInsertCommandRequestModel request, CancellationToken cancellationToken)
         {
             var mapbookRequest = _mapper.Map<Domain.Entity.Book>(request);
-            var book = await _bookRepository.Add(mapbookRequest);
+            var book =  _bookRepository.Add(mapbookRequest);
             var bookmap = _mapper.Map<BookInsertCommandResponse>(book);
+            await _bookRepository.SaveAsync();
             return bookmap;
+
         }
 
     }

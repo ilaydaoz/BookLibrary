@@ -1,4 +1,6 @@
-﻿using BookLibrary.Infrastructure.Persistence.Context;
+﻿using BookLibrary.Core.Application.Repositoriy;
+using BookLibrary.Infrastructure.Persistence.Context;
+using BookLibrary.Infrastructure.Persistence.Repositoriy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +20,7 @@ namespace BookLibrary.Infrastructure.Persistence
                 x.EnableSensitiveDataLogging();
             });
             services.TryAddScoped<DbContext, BLDbContext>();
+            services.AddScoped<IBookRepository, BookRepository>();
         }
     }
 }
