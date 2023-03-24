@@ -9,6 +9,6 @@ namespace BookLibrary.Core.Application.Services.Commands.Book.Delete
 {
     public class BookDeleteCommandRequestModel : IRequest<bool>
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
     }
 }

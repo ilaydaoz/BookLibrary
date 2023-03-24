@@ -3,6 +3,7 @@ using BookLibrary.Core.Domain.Entity;
 using BookLibrary.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Linq.Expressions;
 
 namespace BookLibrary.Infrastructure.Persistence.Repositoriy
 {
@@ -51,6 +52,11 @@ namespace BookLibrary.Infrastructure.Persistence.Repositoriy
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return entity;
+        }
+
+        public Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BookLibrary.Core.Application.Repositoriy;
 using MediatR;
+using Shared.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,12 @@ namespace BookLibrary.Core.Application.Services.Commands.Book.Insert
             var mapbookRequest = _mapper.Map<Domain.Entity.Book>(request);
             var book =  _bookRepository.Add(mapbookRequest);
             var bookmap = _mapper.Map<BookInsertCommandResponse>(book);
-            await _bookRepository.SaveAsync();
-            return bookmap;
-
+            if (await _bookRepository.SaveAsync() < 1)
+            {
+                new Error(ResponseMessages.IdErorBookDelete);
+            }
+            var books = _mapper.Map<BookInsertCommandResponse>(bookmap);
+            return books;
         }
 
     }

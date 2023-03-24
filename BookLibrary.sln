@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookLibrary.Core.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookLibrary.Core.Domain", "BookLibrary.Core\BookLibrary.Core.Domain\BookLibrary.Core.Domain.csproj", "{A1C24063-C6A1-44CC-86C5-3302697C92E3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{85980374-84A4-4C93-B003-108FF80F0280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared\Shared.csproj", "{00CF235C-F5A2-4333-821A-E5867CBFA48E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{A1C24063-C6A1-44CC-86C5-3302697C92E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C24063-C6A1-44CC-86C5-3302697C92E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1C24063-C6A1-44CC-86C5-3302697C92E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CF235C-F5A2-4333-821A-E5867CBFA48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CF235C-F5A2-4333-821A-E5867CBFA48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CF235C-F5A2-4333-821A-E5867CBFA48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CF235C-F5A2-4333-821A-E5867CBFA48E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{20213E13-9B25-4987-835B-5E4CA41849D9} = {A7E05240-EB57-4319-A7A2-C1550818E9C3}
 		{A1FE6E28-760B-4427-9BE8-35D5B56514B8} = {50FE506B-44F0-4C84-A73F-D41AACE7DBF9}
 		{A1C24063-C6A1-44CC-86C5-3302697C92E3} = {50FE506B-44F0-4C84-A73F-D41AACE7DBF9}
+		{00CF235C-F5A2-4333-821A-E5867CBFA48E} = {85980374-84A4-4C93-B003-108FF80F0280}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E3E257B-B5C5-478C-B873-9513B613075F}
